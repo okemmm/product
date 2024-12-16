@@ -3,60 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>学習サポートサイト</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>Progate学習サポートサイト</title>
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- ヘッダー -->
     <header>
-        <h1>Progate学習サポート</h1>
+        <h1>Progate 学習サポートサイト</h1>
     </header>
+
+    <!-- メインコンテンツ -->
     <main>
-        <h2>使い方サポート</h2>
-        <p>学習コースの選び方や進め方で困ったらチャットボットに聞いてみましょう！</p>
-        <!-- Watson Assistant埋め込み部分 -->
-        <script>
-            window.watsonAssistantChatOptions = {
-                integrationID: "YOUR_INTEGRATION_ID", // 取得したIDをここに入力
-                region: "YOUR_REGION", // サービスのホスト地域を指定
-                serviceInstanceID: "YOUR_SERVICE_INSTANCE_ID",
-                onLoad: async (instance) => { await instance.render(); }
-            };
-            setTimeout(function(){
-                const t = document.createElement('script');
-                t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
-                        (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
-                document.head.appendChild(t);
-            }, 100);
-        </script>
+        <h2>よくある質問</h2>
+        <p>学習方法や使い方で困ったら、下のボタンからチャットで質問してみましょう！</p>
+        <button id="chatButton">チャットを開始</button>
     </main>
+
+    <!-- フッター -->
     <footer>
-        <p>&copy; 2023 学習サポート</p>
+        <p>&copy; 2023 学習サポートサイト</p>
     </footer>
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="script.js"></script>
 </body>
 </html>
