@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学習サポートサイト</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Progate学習サポート</h1>
+    </header>
+    <main>
+        <h2>使い方サポート</h2>
+        <p>学習コースの選び方や進め方で困ったらチャットボットに聞いてみましょう！</p>
+        <!-- Watson Assistant埋め込み部分 -->
+        <script>
+            window.watsonAssistantChatOptions = {
+                integrationID: "YOUR_INTEGRATION_ID", // 取得したIDをここに入力
+                region: "YOUR_REGION", // サービスのホスト地域を指定
+                serviceInstanceID: "YOUR_SERVICE_INSTANCE_ID",
+                onLoad: async (instance) => { await instance.render(); }
+            };
+            setTimeout(function(){
+                const t = document.createElement('script');
+                t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
+                        (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+                document.head.appendChild(t);
+            }, 100);
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2023 学習サポート</p>
+    </footer>
+</body>
+</html>
